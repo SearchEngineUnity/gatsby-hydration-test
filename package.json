@@ -2,13 +2,13 @@
   "name": "gatsby-partial-hydration-starter",
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "^5.0.0",
-    "gatsby-plugin-image": "^3.0.0",
-    "gatsby-plugin-manifest": "^5.0.0",
-    "gatsby-plugin-sharp": "^5.0.0",
-    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby": "^5.13.4",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
     "gatsby-source-sanity": "^7.9.1",
-    "gatsby-transformer-sharp": "^5.0.0",
+    "gatsby-transformer-sharp": "^5.13.1",
     "prop-types": "^15.8.1",
     "react": "0.0.0-experimental-49f741046-20230305",
     "react-dom": "0.0.0-experimental-49f741046-20230305"
@@ -27,8 +27,5 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
-  },
-  "engines": {
-    "node": ">=20.11.1"
   }
 }
