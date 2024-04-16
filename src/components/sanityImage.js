@@ -10,7 +10,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export function SanityImage() {
 
-  const imageData = getGatsbyImageData('image-c8efe65b97983de53a194cc844cc71b4b2900704-1180x1080-png', {}, {
+  const imageData = getGatsbyImageData('image-e207f19423b9cfb04d870421f4069a656b5747bb-1140x530-png', {}, {
     projectId: 'ki8bqxrw',
     dataset: 'production',
   });

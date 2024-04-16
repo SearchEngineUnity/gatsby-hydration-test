@@ -43,6 +43,7 @@ const samplePageLinks = [
   },
   { text: "TypeScript", url: "using-typescript" },
   { text: "Partial Hydration", url: "using-partial-hydration" },
+  { text: "Using Hydration in Template", url: 'using-hydration'}
 ]
 
 const moreLinks = [
