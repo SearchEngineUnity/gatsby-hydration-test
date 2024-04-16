@@ -1,5 +1,0 @@
-[build]
-  base = "/"
-  command = "npm run build"
-  publish = "public"
-  environment = { NODE_VERSION = "20.11.1" }
