@@ -1,17 +1,23 @@
 // If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
 import { Link } from "gatsby"
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Demo } from "../components/demo"
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 function usingPartialHydration() {
+  const imageData = getGatsbyImageData('image-e207f19423b9cfb04d870421f4069a656b5747bb-1140x530-png', {}, {
+    projectId: 'ki8bqxrw',
+    dataset: 'production',
+  });
   return (
     <Layout>
       <h1>
         Gatsby supports <b>Partial Hydration</b>
       </h1>
+      <GatsbyImage image={imageData} style={{width: '100%', height: 'auto'}} alt="" />
       <p>
         You can now mark components as client side. This will reduce Javascript
         shipped to the user.
