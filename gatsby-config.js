@@ -1,3 +1,19 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV || `development`}`,
+});
+
+const isProd = process.env.NODE_ENV === 'production';
+const previewEnabled = (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() === 'true';
+
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://gatsbyhydrationtest.netlify.app', // update to new netlify URL
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Partial Hydration Starter`,
@@ -7,8 +23,20 @@ module.exports = {
   },
   flags: {
     PARTIAL_HYDRATION: true,
+    DEV_SSR: true,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'ki8bqxrw',
+        dataset: 'production',
+        token: process.env.SANITY_TOKEN,
+        watchMode: !isProd, // watchMode only in dev mode
+        // watchMode: false,
+        overlayDrafts: !isProd || previewEnabled, // drafts in dev & Gatsby Cloud Preview
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
