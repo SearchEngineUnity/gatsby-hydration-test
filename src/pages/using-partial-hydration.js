@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Demo } from "../components/demo"
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 function usingPartialHydration() {
   return (
